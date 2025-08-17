@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Duck Hunt</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+
+<div class="frame" id="frame">
+    <div class="frame-main">
+        <div class="scene js-scene" id="scene">
+            <div class="sky"></div>
+            <div class="grass"></div>
+            <div class="ground">
+                <div class="gun" id="gun"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="frame-footer">
+        <div class="frame-board js-board">
+            <div class="frame-board__bullets js-board-bullets">
+                Bullets: <span>3</span>/3
+            </div>
+            <div class="frame-board__ducks js-board-ducks">
+                Ducks: <span>0</span>/10
+            </div>
+            <div class="frame-board__score js-board-score">
+                Score: <span>0</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="frame-intro">
+        <div class="frame-intro__menu">
+            <button class="btn" id="new_game">Start New Game</button>
+            <button class="btn" disabled id="continue_game">Continue</button>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/components/Bird.js"></script>
+<script src="assets/js/components/Gun.js"></script>
+<script src="assets/js/script.js"></script>
+
+
+</body>
+</html>
