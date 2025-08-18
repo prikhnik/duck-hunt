@@ -5,6 +5,8 @@ class Bird {
         this.el.classList.add("target", 'js-target');
         this.container.appendChild(this.el);
 
+        this.hit = false;
+
         setInterval(() => {
             this.el.classList.add('--alt');
         }, 700);

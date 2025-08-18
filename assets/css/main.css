@@ -169,10 +169,45 @@ body {
 .frame.--active .frame-intro {
     opacity: 0;
     visibility: hidden;
-    transition: .3s ease;
 }
 
 .frame.--active .frame-footer {
     opacity: 1;
     visibility: visible;
+}
+
+.bullet {
+    background: lightgrey;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid;
+    display: block;
+    position: absolute;
+    z-index: 2;
+}
+.frame-results {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    background: rgba(0,0,0,0.8);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.frame.--results .frame-results {
+    opacity: 1;
+    visibility: visible;
+}
+
+.frame.--results .frame-intro{
+    display: none;
 }

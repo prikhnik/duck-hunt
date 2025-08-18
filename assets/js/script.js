@@ -11,4 +11,5 @@ function startGame() {
 
     new Bird({ startX: 50, speed: 2, amplitude: 80 });
     new Bird({ startX: 200, speed: 3, amplitude: 120 });
+    new Gun();
 }
