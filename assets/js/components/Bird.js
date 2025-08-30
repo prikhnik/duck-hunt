@@ -23,7 +23,12 @@ class Bird {
         this.amplitude = options.amplitude ?? 100;
 
         this.animate = this.animate.bind(this);
-        requestAnimationFrame(this.animate);
+        this.rafId = requestAnimationFrame(this.animate);
+
+        setTimeout(() => {
+            this.flyAway();
+            cancelAnimationFrame(this.animate);
+        }, 5000);
     }
 
 
@@ -50,6 +55,30 @@ class Bird {
         this.el.style.left = this.x + "px";
         this.el.style.bottom = y + "px";
 
-        requestAnimationFrame(this.animate);
+        this.rafId = requestAnimationFrame(this.animate);
+    }
+
+    flyAway() {
+        cancelAnimationFrame(this.rafId);
+        this.el.classList.add("--fly-away");
+
+        this.el.addEventListener("transitionend", () => {
+            this.el.remove();
+        }, { once: true });
+
+        this.el.style.transition = "bottom 2s ease-out";
+        this.el.style.bottom = window.innerHeight + "px";
+    }
+
+    flyDown() {
+        cancelAnimationFrame(this.rafId);
+        this.el.classList.add("--fly-down");
+
+        this.el.addEventListener("transitionend", () => {
+            this.el.remove();
+        }, { once: true });
+
+        this.el.style.transition = "bottom 2s ease-out";
+        this.el.style.bottom = -window.innerHeight + "px";
     }
 }

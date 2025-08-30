@@ -103,7 +103,9 @@ class Gun {
                         b.el.remove();
                         state.bullets.splice(i, 1);
 
-                        t.remove();
+                        t.classList.add('--fly-down');
+
+
 
                         break;
                     }
@@ -135,7 +137,7 @@ class Gun {
 
         function loop() {
             const angle = angleToMouse();
-            const deg = angle * 180 / Math.PI + 90;
+            const deg = angle * 180 / Math.PI + 90; // TODO
             gun.style.transform = `translateX(-50%) rotate(${deg}deg)`;
             requestAnimationFrame(loop);
         }
